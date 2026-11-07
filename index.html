@@ -9,6 +9,20 @@
 <meta property="og:description" content="Leads in. Contracts out. Watch my AI agents find buyers, email them and close a deal.">
 <meta property="og:image" content="assets/images/usman-amer.jpg">
 <meta name="theme-color" content="#eceef2">
+<script>
+(function(){
+  try{
+    var t=localStorage.getItem('ua_theme');
+    if(t==='dark'||t==='light'){
+      document.documentElement.setAttribute('data-theme',t);
+      if(t==='dark'){
+        var m=document.querySelector('meta[name="theme-color"]');
+        if(m)m.setAttribute('content','#0c0e11');
+      }
+    }
+  }catch(e){}
+})();
+</script>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,6 +60,10 @@
       <a href="#lab" data-nav="lab">GTM Lab</a>
       <a href="#contact" data-nav="contact">Contact</a>
     </nav>
+    <button class="theme-btn" type="button" id="theme-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+    </button>
     <button class="btn btn-primary btn-sm nav-cta" type="button" data-book id="nav-book">Book a call</button>
     <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
