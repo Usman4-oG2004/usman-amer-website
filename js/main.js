@@ -432,4 +432,24 @@
   var liShot=document.getElementById('li-shot'),liHint=document.getElementById('li-hint');
   if(liShot&&liHint){liShot.addEventListener('scroll',function(){if(liShot.scrollTop>40)liHint.classList.add('gone');},{passive:true});}
 
+  /* ============ THEME TOGGLE ============ */
+  var themeBtn=document.getElementById('theme-btn');
+  function getEffectiveTheme(){
+    var current=document.documentElement.getAttribute('data-theme');
+    if(current==='dark'||current==='light')return current;
+    return (window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';
+  }
+  function setTheme(t){
+    document.documentElement.setAttribute('data-theme',t);
+    try{localStorage.setItem('ua_theme',t);}catch(e){}
+    var m=document.querySelector('meta[name="theme-color"]');
+    if(m)m.setAttribute('content',t==='dark'?'#0c0e11':'#eceef2');
+  }
+  if(themeBtn){
+    themeBtn.addEventListener('click',function(){
+      var next=getEffectiveTheme()==='dark'?'light':'dark';
+      setTheme(next);
+    });
+  }
+
 })();
