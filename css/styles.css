@@ -796,3 +796,7 @@ h1.hello{margin:0;letter-spacing:0;line-height:1.2;flex-wrap:wrap}
 @media (max-width:860px){.doors.three{grid-template-columns:1fr}}
 @media (max-width:600px){.doors.two-up{grid-template-columns:1fr}}
 .reach-card .val{font-size:14px;letter-spacing:-.01em}
+
+.resume-mini{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font:600 13px/1 var(--f-body);color:var(--ink-2);text-decoration:none;padding:8px 12px;border-radius:9px;border:1.5px dashed var(--line);background:var(--tile);transition:color .15s ease,border-color .15s ease}
+.resume-mini:hover{color:var(--ink);border-color:var(--ink-3)}
+.resume-mini svg{width:14px;height:14px;flex:none}

@@ -44,8 +44,8 @@ Shared files: `css/styles.css` (all styling, tokens at the top), `js/config.js` 
 
 - Usman Amer: Upwork BD + GTM, learning technical sales closing.
 - **Now:** Business Development Representative, Brown Tech International (Sep 2025 – Present).
-- Business Developer, Leaptly (Jan 2026 – Sep 2026). Sales Executive, Growlatics (Nov 2024 – Aug 2025).
-- GTM Engineer, Umeed (May 2026 – Jul 2026): ran his automations for them on email, Reddit, Instagram and LinkedIn. https://www.linkedin.com/company/umeed-reframing-mindsets/
+- Business Developer for client Leaptly (Jan 2026 – Sep 2026). Sales Executive, Growlatics (Nov 2024 – Aug 2025).
+- GTM Engineer for client Umeed (May 2026 – Jul 2026): ran his automations for them on email, Reddit, Instagram and LinkedIn. https://www.linkedin.com/company/umeed-reframing-mindsets/
 - Core services: Upwork bidding, Upwork profile optimization, GTM automation (Agentic Force). Also LinkedIn profile optimization; learning technical sales closing.
 - Upwork leads are found manually (Upwork has no API and does not allow scraping). Automated lead finding uses LinkedIn Sales Navigator, Apollo, Reddit and Instagram.
 - Clients closed: TeleMD Health, VoiceCake, MPM Associates, Dr. Will Cole (GHL concierge), a water filtration project. LinkedIn client: Muhammad Uzair (7,184 followers).
