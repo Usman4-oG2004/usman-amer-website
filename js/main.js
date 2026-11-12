@@ -444,4 +444,11 @@
     });
   }
 
+  /* ============ BLOG READING PROGRESS ============ */
+  var rp=document.querySelector('.read-progress span'),art=document.querySelector('.article');
+  if(rp&&art){
+    var upd=function(){var r=art.getBoundingClientRect();var total=r.height-window.innerHeight;var p=total>0?Math.min(1,Math.max(0,-r.top/total)):1;rp.style.transform='scaleX('+p+')';};
+    window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+  }
+
 })();
