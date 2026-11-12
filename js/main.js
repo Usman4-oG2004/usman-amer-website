@@ -25,42 +25,21 @@
   function sget(k){try{return sessionStorage.getItem(k);}catch(e){return null;}}
   function sset(k,v){try{sessionStorage.setItem(k,v);}catch(e){}}
 
-  /* ============ ROUTER ============ */
-  var VIEWS=['home','about','services','work','lab','contact'];
-  var views={};VIEWS.forEach(function(v){views[v]=document.getElementById('v-'+v);});
+  /* ============ NAV (real pages) ============ */
   var mb=document.getElementById('menu-btn'),mm=document.getElementById('mobile-menu');
-  function closeMenu(){mm.hidden=true;mb.setAttribute('aria-expanded','false');}
-  var current=null;
-  function show(name){
-    if(name==='play')name='lab';
-    if(VIEWS.indexOf(name)<0)name='home';
-    closeMenu();
-    if(name===current)return;
-    current=name;
-    VIEWS.forEach(function(v){views[v].hidden=(v!==name);});
-    document.querySelectorAll('[data-nav]').forEach(function(a){
-      if(a.getAttribute('data-nav')===name)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
-    });
-    window.scrollTo(0,0);
-  }
-  function route(){show((location.hash||'').replace('#',''));}
-  window.addEventListener('hashchange',route);
-  route();
-  document.addEventListener('click',function(e){
-    var a=e.target.closest?e.target.closest('a[href^="#"]'):null;
-    if(!a)return;
-    var n=a.getAttribute('href').slice(1);
-    if(n==='play')n='lab';
-    if(VIEWS.indexOf(n)<0)return;
-    e.preventDefault();
-    if(n===current)window.scrollTo(0,0);
-    show(n);
-    try{if(location.hash!=='#'+n)location.hash=n;}catch(err){}
-    var target=a.getAttribute('data-scroll');
-    if(target)setTimeout(function(){var el=document.getElementById(target);if(el)el.scrollIntoView({block:'start'});},80);
-    if(a.hasAttribute('data-run'))setTimeout(function(){var lab=document.querySelector('.lab');if(lab)lab.scrollIntoView({block:'start'});runAgents();},150);
+  function closeMenu(){if(mm){mm.hidden=true;}if(mb){mb.setAttribute('aria-expanded','false');}}
+  var PAGE=document.body.getAttribute('data-page')||'home';
+  document.querySelectorAll('[data-nav]').forEach(function(a){
+    if(a.getAttribute('data-nav')===PAGE)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
   });
-  mb.addEventListener('click',function(){var open=mm.hidden;mm.hidden=!open;mb.setAttribute('aria-expanded',String(open));});
+  /* old links like /#about from before the site had real pages */
+  var LEGACY={about:'/about',services:'/services',work:'/work',lab:'/gtm-lab',play:'/gtm-lab',contact:'/contact',blog:'/blog'};
+  var lh=(location.hash||'').slice(1);
+  if(PAGE==='home'&&LEGACY[lh]){location.replace(LEGACY[lh]);}
+  if(mb&&mm){
+    mb.addEventListener('click',function(){var open=mm.hidden;mm.hidden=!open;mb.setAttribute('aria-expanded',String(open));});
+    mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+  }
 
   /* ============ COPY ============ */
   function selectText(id){var el=id&&document.getElementById(id);if(!el)return;try{var r=document.createRange();r.selectNodeContents(el);var s=window.getSelection();s.removeAllRanges();s.addRange(r);}catch(e){}}
@@ -131,6 +110,7 @@
   function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
 
   /* ============ PIPELINE CALCULATOR ============ */
+  if(document.getElementById('c-out')){
   var cIn={out:document.getElementById('c-out'),reply:document.getElementById('c-reply'),close:document.getElementById('c-close'),deal:document.getElementById('c-deal')};
   function money(n){return '$'+Math.round(n).toLocaleString('en-US');}
   function fmt1(n){return n>=10?String(Math.round(n)):(Math.round(n*10)/10).toString();}
@@ -153,8 +133,10 @@
   }
   Object.keys(cIn).forEach(function(k){cIn[k].addEventListener('input',calc);});
   calc();
+  }
 
   /* ============ QUERY FORM ============ */
+  if(document.getElementById('q-form')){
   var qf=document.getElementById('q-form');
   function qText(){
     var n=document.getElementById('q-name').value.trim(),c=document.getElementById('q-company').value.trim(),
@@ -170,8 +152,10 @@
     var no=function(){document.getElementById('q-msg').select();l.textContent='Select and copy';setTimeout(function(){l.textContent=o;},2000);};
     try{navigator.clipboard.writeText(txt).then(ok,no);}catch(err){no();}
   });
+  }
 
   /* ============ GAME 1: CLOSE THE DEAL ============ */
+  if(document.getElementById('game')){
   var ROUNDS=[
     {stage:'Find',who:'Upwork feed, 9:12 am',say:'Three new posts. You have one bid to spend today.',ask:'Which one do you go after?',
      opts:[{t:'"Need AI chatbot for my store. Budget $50. ASAP." 50+ proposals already.',f:'Tiny budget, crowded post. That is a race to the bottom.'},
@@ -224,8 +208,10 @@
     document.getElementById('g1-book').addEventListener('click',openModal);
   }
   reset();renderRound();
+  }
 
   /* ============ GAME 2: LEAD OR PASS ============ */
+  if(document.getElementById('lop')){
   var POSTS=[
     {title:'AI voice agent for an HVAC company',meta:[['$4,000 fixed','good'],['Payment verified','good'],['15 hires','good'],['3 proposals','good']],lead:1,why:'Real budget, proven buyer, almost no competition. Bid today.'},
     {title:'Build me an Uber clone',meta:[['$200 fixed','bad'],['Payment unverified','bad'],['0 hires','bad']],lead:0,why:'A full app for $200 from an unverified client. Hard pass.'},
@@ -266,8 +252,10 @@
     document.getElementById('g2-book').addEventListener('click',openModal);
   }
   lreset();lrender();
+  }
 
   /* ============ GTM LAB: AGENTIC FORCE ============ */
+  if(document.getElementById('gtm-form')){
   var IND={
     clinics:{who:'clinics',pain:'missed patient calls',leads:{
       linkedin:['Multi-location dental group','Hiring 2 front desk coordinators','are hiring two front desk coordinators'],
@@ -427,6 +415,10 @@
     try{gForm.scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'});}catch(e){}
     document.getElementById('g-offer').focus({preventScroll:true});
   });
+
+  /* /gtm-lab?run=1 starts the agents straight away */
+  if(/[?&]run=1/.test(location.search)){setTimeout(function(){var lab=document.querySelector('.lab');if(lab)lab.scrollIntoView({block:'start'});runAgents();},350);}
+  }
 
   /* ============ PROFILE SCROLL HINT ============ */
   var liShot=document.getElementById('li-shot'),liHint=document.getElementById('li-hint');

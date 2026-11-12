@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GTM Automation Lab · AI Agents for B2B Lead Generation | Usman Amer</title>
+<meta name="description" content="Watch a GTM automation demo: AI agents find leads on LinkedIn, Apollo, Reddit and Instagram, enrich them, send cold email and an AI sales agent books the call.">
+<meta property="og:title" content="GTM Automation Lab · AI Agents for B2B Lead Generation | Usman Amer">
+<meta property="og:description" content="Watch a GTM automation demo: AI agents find leads on LinkedIn, Apollo, Reddit and Instagram, enrich them, send cold email and an AI sales agent books the call.">
+<link rel="canonical" href="https://usmanamerbdr.vercel.app/gtm-lab">
+<meta property="og:site_name" content="Usman Amer">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://usmanamerbdr.vercel.app/gtm-lab">
+<meta property="og:image" content="https://usmanamerbdr.vercel.app/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Usman Amer website: Leads in. Contracts out.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GTM Automation Lab · AI Agents for B2B Lead Generation | Usman Amer">
+<meta name="twitter:description" content="Watch a GTM automation demo: AI agents find leads on LinkedIn, Apollo, Reddit and Instagram, enrich them, send cold email and an AI sales agent books the call.">
+<meta name="twitter:image" content="https://usmanamerbdr.vercel.app/assets/og-image.jpg">
+<meta name="theme-color" content="#eceef2">
+<script>
+(function(){
+  try{
+    var t=localStorage.getItem('ua_theme');
+    if(t==='dark'||t==='light'){
+      document.documentElement.setAttribute('data-theme',t);
+      if(t==='dark'){
+        var m=document.querySelector('meta[name="theme-color"]');
+        if(m)m.setAttribute('content','#0c0e11');
+      }
+    }
+  }catch(e){}
+})();
+</script>
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Geist:wght@400;500;600&family=Kalam:wght@400;700&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+<body data-page="lab">
+<!-- CONTACT STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <button type="button" data-copy="osmanb4u2@gmail.com" data-target="strip-mail" id="strip-copy" aria-label="Copy email address">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>
+      <span id="strip-mail">osmanb4u2@gmail.com</span>
+    </button>
+    <a href="https://linkedin.com/in/usman-amer-a11652266" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 0 0-4 0"/></svg>
+      <span>LinkedIn<span class="hide-sm">: usman-amer</span></span>
+    </a>
+    <span class="avail"><i></i><span class="hide-sm">Open to new roles and clients ·</span> <button type="button" data-book id="strip-book">Book a call</button></span>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="avatar photo" role="img" aria-label="Photo of Usman Amer"></span>
+      <span class="brand-text"><strong>Usman Amer</strong><small>SDR / BDR · Upwork BD · GTM automation</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="/" data-nav="home">Home</a>
+      <a href="/about" data-nav="about">About</a>
+      <a href="/services" data-nav="services">Services</a>
+      <a href="/work" data-nav="work">Work</a>
+      <a href="/gtm-lab" data-nav="lab">GTM Lab</a>
+      <a href="/blog" data-nav="blog">Blog</a>
+      <a href="/contact" data-nav="contact">Contact</a>
+    </nav>
+    <button class="theme-btn" type="button" id="theme-btn" aria-label="Toggle dark/light theme" title="Toggle theme">
+      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+    </button>
+    <button class="btn btn-primary btn-sm nav-cta" type="button" data-book id="nav-book">Book a call</button>
+    <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <div class="wrap">
+      <a href="/" data-nav="home">Home</a>
+      <a href="/about" data-nav="about">About</a>
+      <a href="/services" data-nav="services">Services</a>
+      <a href="/work" data-nav="work">Work</a>
+      <a href="/gtm-lab" data-nav="lab">GTM Lab</a>
+      <a href="/blog" data-nav="blog">Blog</a>
+      <a href="/contact" data-nav="contact">Contact</a>
+      <button class="btn btn-primary" type="button" data-book id="mm-book">Book a call</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ======================= GTM LAB ======================= -->
+<div class="view" id="v-lab" data-view="lab">
+  <section>
+    <div class="wrap">
+      <div class="sec-title page-title">
+        <span class="kicker">GTM Lab · Agentic Force</span>
+        <h1>GTM automation: your sales team, running on agents.</h1>
+        <p>One setup that finds buyers on LinkedIn, Apollo, Reddit and Instagram, enriches them, emails them, and lets an AI sales agent handle every reply until the deal is closed. Try it with your business.</p>
+      </div>
+      <div class="whiteboard lab">
+        <div class="surface">
+          <form class="lab-in" id="gtm-form" novalidate>
+            <div class="lab-step"><span class="n">1</span><label for="g-offer">What do you sell?</label></div>
+            <input id="g-offer" type="text" value="AI voice receptionists" maxlength="60" autocomplete="off">
+            <div class="lab-step"><span class="n">2</span><label for="g-ind">Who do you sell to?</label></div>
+            <select id="g-ind">
+              <option value="clinics">Dental &amp; medical clinics</option>
+              <option value="home">Home services (HVAC, plumbing, roofing)</option>
+              <option value="realestate">Real estate teams</option>
+              <option value="property">Property managers</option>
+              <option value="saas">SaaS startups</option>
+              <option value="ecom">E-commerce brands</option>
+              <option value="legal">Law firms</option>
+            </select>
+            <fieldset>
+              <legend><span class="n">3</span>Pick your platforms</legend>
+              <div class="pgroup"><small>Find and enrich leads on</small>
+                <div class="pchips">
+                  <label class="pchip"><input type="checkbox" name="src" value="linkedin" id="p-linkedin" checked><span>LinkedIn Sales Navigator</span></label>
+                  <label class="pchip"><input type="checkbox" name="src" value="apollo" id="p-apollo" checked><span>Apollo.io</span></label>
+                  <label class="pchip"><input type="checkbox" name="src" value="reddit" id="p-reddit" checked><span>Reddit</span></label>
+                  <label class="pchip"><input type="checkbox" name="src" value="instagram" id="p-instagram"><span>Instagram</span></label>
+                </div>
+              </div>
+              <div class="pgroup"><small>Reach out with</small>
+                <div class="pchips">
+                  <label class="pchip"><input type="checkbox" name="ch" value="email" id="p-email" checked><span>Automated email</span></label>
+                  <label class="pchip"><input type="checkbox" name="ch" value="dm" id="p-dm"><span>LinkedIn messages</span></label>
+                  <label class="pchip"><input type="checkbox" name="ch" value="ig" id="p-ig"><span>Instagram DMs</span></label>
+                </div>
+              </div>
+              <div class="pgroup"><small>Track deals in</small>
+                <div class="pchips">
+                  <label class="pchip"><input type="checkbox" name="crm" value="hubspot" id="p-hubspot" checked><span>HubSpot</span></label>
+                  <label class="pchip"><input type="checkbox" name="crm" value="ghl" id="p-ghl"><span>GoHighLevel</span></label>
+                  <label class="pchip"><input type="checkbox" name="crm" value="clickup" id="p-clickup"><span>ClickUp</span></label>
+                </div>
+              </div>
+            </fieldset>
+            <button class="btn btn-primary" type="button" id="g-run">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 5v14l11-7Z"/></svg>
+              <span>Run Agentic Force</span>
+            </button>
+            <p class="form-err" id="g-err" hidden>Pick at least one place to find leads.</p>
+          </form>
+
+          <div class="lab-board">
+            <div class="board-head"><strong>Agentic Force</strong><span class="status" id="g-status"><i></i><span>Idle · waiting for your setup</span></span></div>
+            <ol class="agents" id="agents">
+              <li class="agent" data-agent="scout"><span class="aic" style="--c:var(--note-blue)"><svg viewBox="0 0 24 24" fill="none" stroke="#2a2818" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></svg></span><span class="abody"><strong>Scout</strong><span class="alog">Finds buyers showing intent</span></span><span class="astate">Idle</span></li>
+              <li class="agent" data-agent="enrich"><span class="aic" style="--c:var(--note-yellow)"><svg viewBox="0 0 24 24" fill="none" stroke="#2a2818" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="2.8"/><path d="M5 6v6c0 1.5 3 2.8 7 2.8s7-1.3 7-2.8V6M5 12v6c0 1.5 3 2.8 7 2.8s7-1.3 7-2.8v-6"/></svg></span><span class="abody"><strong>Enrich</strong><span class="alog">Decision maker, verified email, signals</span></span><span class="astate">Idle</span></li>
+              <li class="agent" data-agent="writer"><span class="aic" style="--c:var(--note-pink)"><svg viewBox="0 0 24 24" fill="none" stroke="#2a2818" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16Z"/><path d="m13 7 4 4"/></svg></span><span class="abody"><strong>Writer</strong><span class="alog">Personal first lines and sequences</span></span><span class="astate">Idle</span></li>
+              <li class="agent" data-agent="mailer"><span class="aic" style="--c:var(--note-green)"><svg viewBox="0 0 24 24" fill="none" stroke="#2a2818" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11 21 3l-6 18-4-8Z"/><path d="m11 13 10-10"/></svg></span><span class="abody"><strong>Mailer</strong><span class="alog">Sends from warmed inboxes, follows up</span></span><span class="astate">Idle</span></li>
+              <li class="agent" data-agent="closer"><span class="aic" style="--c:var(--note-orange)"><svg viewBox="0 0 24 24" fill="none" stroke="#2a2818" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4Z"/><path d="M8 10h8M8 13h5"/></svg></span><span class="abody"><strong>Sales agent</strong><span class="alog">Replies, handles objections, closes</span></span><span class="astate">Idle</span></li>
+              <li class="agent" data-agent="sync"><span class="aic" style="--c:var(--note-blue)"><svg viewBox="0 0 24 24" fill="none" stroke="#2a2818" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11a8 8 0 0 0-14-4.5L4 9M4 4v5h5M4 13a8 8 0 0 0 14 4.5l2-2.5M20 20v-5h-5"/></svg></span><span class="abody"><strong>Sync</strong><span class="alog">Logs every touch in your CRM</span></span><span class="astate">Idle</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <div class="gtm-results" id="gtm-results" hidden>
+        <div class="res-head"><h2>Here's your first week.</h2><span class="ex-tag">Estimates and example leads, not live data</span></div>
+        <div class="kpis" id="g-kpis"></div>
+        <div class="res-grid">
+          <div class="panel"><h3>Top example leads</h3><div id="g-leads"></div></div>
+          <div class="convo">
+            <div class="convo-head">
+              <span class="af">AF</span>
+              <span class="ct"><strong>Sales agent</strong><small id="g-with">Example conversation</small></span>
+              <button class="copy" type="button" id="g-replay">Replay</button>
+            </div>
+            <div class="convo-body" id="g-convo" aria-live="polite"></div>
+          </div>
+        </div>
+        <div class="res-cta">
+          <span class="hand">Want this running for your business?</span>
+          <button class="btn btn-primary" type="button" data-book id="g-book">Book a call</button>
+          <button class="btn btn-ghost" type="button" id="g-again">Change setup</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="umeed">
+        <div class="field-copy">
+          <span class="kicker">In the field</span>
+          <h2>Agentic Force at Umeed.</h2>
+          <p>For three months I worked as Umeed's GTM Engineer and ran my automations for them across four channels.</p>
+          <div class="field-meta"><span>GTM Engineer</span><span>May – Jul 2026</span><span>3 months</span></div>
+          <a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/company/umeed-reframing-mindsets/" target="_blank" rel="noopener">Umeed on LinkedIn ↗</a>
+        </div>
+        <div class="field-ch">
+          <div class="chan"><span class="sq"><svg viewBox="0 0 48 48" fill="none" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="12" width="34" height="24" rx="5" fill="var(--note-green)"/><path d="m9 15 15 11 15-11"/></svg></span><strong>Email</strong><span>Automated sequences from warmed inboxes</span></div>
+          <div class="chan"><span class="sq"><svg viewBox="0 0 48 48" fill="none" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="24" cy="28" rx="15" ry="10" fill="var(--note-orange)"/><circle cx="18.5" cy="27" r="1.8" fill="var(--ink)"/><circle cx="29.5" cy="27" r="1.8" fill="var(--ink)"/><path d="M19 32c3 2 7 2 10 0M24 18l3-8 7 2"/><circle cx="35" cy="12" r="2.5"/></svg></span><strong>Reddit</strong><span>Finding people asking for help</span></div>
+          <div class="chan"><span class="sq"><svg viewBox="0 0 48 48" fill="none" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="32" height="32" rx="9" fill="var(--note-pink)"/><circle cx="24" cy="24" r="7"/><circle cx="33" cy="15" r="1.6" fill="var(--ink)"/></svg></span><strong>Instagram</strong><span>Account discovery and DM outreach</span></div>
+          <div class="chan"><span class="sq"><svg viewBox="0 0 48 48" fill="none" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="7" width="34" height="34" rx="8" fill="var(--note-blue)"/><path d="M16 21v11M16 16v.01M23 32v-7a4 4 0 0 1 8 0v7M23 21v11"/></svg></span><strong>LinkedIn</strong><span>Targeted outreach and follow-ups</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-title">
+        <span class="kicker">The full setup</span>
+        <h2>Six layers, one pipeline.</h2>
+        <p>What I build when you hire me. Each layer runs on n8n, Make.com, GoHighLevel and AI agents, and plugs into the tools you already pay for.</p>
+      </div>
+      <div class="setup">
+        <article class="layer">
+          <span class="dot" style="--mag:#8a909c">1</span>
+          <h3>Presence</h3><span class="lsub">A page worth visiting</span>
+          <ul><li>Headline, About and Featured rewritten</li><li>3 posts a week on a content plan</li><li>Services and proof up front</li></ul>
+        </article>
+        <article class="layer">
+          <span class="dot" style="--mag:#1d5fe0">2</span>
+          <h3>Find</h3><span class="lsub">Buyers with intent</span>
+          <ul><li>ICP filters on Sales Navigator and Apollo</li><li>Reddit threads where buyers ask for help</li><li>Instagram business accounts by niche and activity</li></ul>
+        </article>
+        <article class="layer">
+          <span class="dot" style="--mag:#c99a06">3</span>
+          <h3>Enrich</h3><span class="lsub">Know who you're writing to</span>
+          <ul><li>Waterfall lookup for the decision maker</li><li>Verified work emails to keep bounces low</li><li>Signals: hiring, funding, new locations</li></ul>
+        </article>
+        <article class="layer">
+          <span class="dot" style="--mag:#16884f">4</span>
+          <h3>Email</h3><span class="lsub">Inbox, not the spam folder</span>
+          <ul><li>Separate sending domains, warmed inboxes</li><li>30 to 40 sends per inbox a day</li><li>3 to 4 step sequences, personal first lines</li></ul>
+        </article>
+        <article class="layer hot">
+          <span class="dot" style="--mag:#d4372c">5</span>
+          <h3>AI sales agent</h3><span class="lsub">Every reply answered in minutes</span>
+          <ul><li>Trained on your offer, FAQs and tone</li><li>Handles objections, qualifies on BANT</li><li>Books the call or sends proposal and contract</li><li>Hands anything sensitive to you</li></ul>
+        </article>
+        <article class="layer">
+          <span class="dot" style="--mag:#6b4fd8">6</span>
+          <h3>CRM</h3><span class="lsub">Nothing falls through</span>
+          <ul><li>Every touch logged in HubSpot or GHL</li><li>Deal stages move on their own</li><li>Weekly pipeline report to your inbox</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="presence">
+    <div class="wrap">
+      <div class="sec-title">
+        <span class="kicker">Layer 1, up close</span>
+        <h2>No worthwhile page, no network.</h2>
+        <p>Outreach makes people curious. Then they open your LinkedIn. A profile that says who you help, shows proof and posts every week is what turns that click into a reply. Scroll through a profile I worked on.</p>
+      </div>
+      <div class="presence">
+        <figure class="browser">
+          <div class="bar" aria-hidden="true">
+            <span class="dots"><i></i><i></i><i></i></span>
+            <span class="url">linkedin.com/in/muhammaduzair-ai-expert</span>
+          </div>
+          <div class="shot" tabindex="0" role="region" aria-label="Scrollable screenshot of Muhammad Uzair's LinkedIn profile" id="li-shot">
+            <img src="/assets/images/client-muhammad-uzair-linkedin.jpg" width="812" height="4465" alt="Screenshot of Muhammad Uzair's LinkedIn profile: headline, 7,184 followers, About, Services, Featured portfolio, posts, experience and certifications">
+          </div>
+          <figcaption class="scroll-hint" id="li-hint">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+            Scroll his profile
+          </figcaption>
+        </figure>
+
+        <div class="case-side">
+          <div class="li-name"><strong>Muhammad Uzair</strong><span class="li-badge">Client</span></div>
+          <p class="li-head">Analytics Engineer @ Polaris | Data Engineering | Clickhouse | ETL | Snowflake</p>
+          <div class="li-stats"><span><b>7,184</b> followers</span><span><b>500+</b> connections</span></div>
+          <h3>What I worked on</h3>
+          <ul class="li-done">
+            <li>Keyword-rich headline</li><li>About written as a pitch</li><li>Featured portfolio</li><li>Services section</li><li>Regular posting</li>
+          </ul>
+          <p class="li-result">Result: a lot more impressions and inbound leads.</p>
+          <a class="btn btn-ghost btn-sm" href="https://www.linkedin.com/in/muhammaduzair-ai-expert" target="_blank" rel="noopener">Open his live profile ↗</a>
+          <div class="li-next">
+            <span class="hand">Your profile could be next.</span>
+            <p>I'll review your LinkedIn and tell you the three changes that would bring in the most leads.</p>
+            <button class="btn btn-primary btn-sm" type="button" data-book id="audit-book">Book a profile audit</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="week">
+        <h3>A posting week that builds network</h3>
+        <div class="week-notes">
+          <div class="note"><span class="pin" aria-hidden="true"></span><span class="day">Mon · Proof</span><p>A client result or a build, with the numbers.</p></div>
+          <div class="note"><span class="pin" aria-hidden="true"></span><span class="day">Wed · Process</span><p>How you do the work, step by step.</p></div>
+          <div class="note"><span class="pin" aria-hidden="true"></span><span class="day">Fri · Point of view</span><p>A take on your industry that starts a conversation.</p></div>
+        </div>
+        <p class="week-foot"><span class="hand">+ 20 minutes a day</span> commenting on your buyers' posts, so they know your name before your email lands.</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="sec-title"><span class="kicker">Warm-up game 1</span><h2>Can you close this deal?</h2><p>Five moments from an AI-services deal, from spotting the right Upwork post to getting the yes. Pick the move a closer would make.</p></div>
+      <div class="whiteboard game"><div class="surface" id="game" aria-live="polite"></div></div>
+    </div>
+  </section>
+  <section>
+    <div class="wrap">
+      <div class="sec-title"><span class="kicker">Warm-up game 2</span><h2>Lead or pass?</h2><p>Eight example Upwork posts. Bid on the real opportunities and skip the time-wasters. This is my morning, every morning.</p></div>
+      <div class="whiteboard lop"><div class="surface" id="lop" aria-live="polite"></div></div>
+    </div>
+  </section>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <span class="hand">Leads in. Contracts out.</span>
+      <small>© 2026 Usman Amer · Business Development Representative (SDR/BDR) · Upwork BD and GTM automation</small>
+    </div>
+    <div><h4>Pages</h4><nav aria-label="Footer"><a href="/">Home</a><a href="/about">About</a><a href="/services">Services</a><a href="/work">Work</a><a href="/gtm-lab">GTM Lab</a><a href="/blog">Blog</a><a href="/contact">Contact</a></nav></div>
+    <div><h4>Reach me</h4><div class="fc"><span style="user-select:all;color:var(--ink-2)">osmanb4u2@gmail.com</span><a href="https://linkedin.com/in/usman-amer-a11652266" target="_blank" rel="noopener">LinkedIn ↗</a><a href="/contact">Book a call</a><a href="/assets/Usman-Amer-Resume.pdf" download>Download resume (PDF)</a></div></div>
+  </div>
+</footer>
+
+<!-- floating book button -->
+<button class="fab" type="button" data-book id="fab-book" aria-label="Book a call with Usman">
+  <span class="avatar photo" aria-hidden="true"></span><span class="lbl">Book a call</span>
+</button>
+
+<!-- booking popup -->
+<div class="modal" id="book-modal" hidden>
+  <div class="scrim" data-close></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="bm-title">
+    <button class="x" type="button" data-close aria-label="Close" id="bm-x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="who">
+      <span class="avatar photo" aria-hidden="true"></span>
+      <div><strong>Usman Amer</strong><span><i></i>Taking calls this week</span></div>
+    </div>
+    <h2 id="bm-title">Got 15 minutes? Let's talk.</h2>
+    <p>Pick a time on my calendar and you get an invite with a video link straight away. Hiring, lead gen or a quick sales question, all welcome.</p>
+    <a class="btn btn-primary" data-book-link target="_blank" rel="noopener" href="/contact" id="bm-go">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+      Pick a time
+    </a>
+    <div class="alt">
+      <a href="https://linkedin.com/in/usman-amer-a11652266" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 11v5M8 8v.01M12 16v-5M16 16v-3a2 2 0 0 0-4 0"/></svg>LinkedIn</a>
+      <button type="button" data-copy="osmanb4u2@gmail.com" data-target="bm-mail" id="bm-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><span>Copy email</span></button>
+    </div>
+    <span class="mail-line" id="bm-mail">osmanb4u2@gmail.com</span>
+    <button class="btn-link later" type="button" data-close id="bm-later">Maybe later</button>
+  </div>
+</div>
+
+<script src="/js/config.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

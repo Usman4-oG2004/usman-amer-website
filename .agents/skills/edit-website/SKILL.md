@@ -13,7 +13,10 @@ Read `AGENTS.md` first. Everything is plain HTML/CSS/JS, so edit the files direc
 Edit `js/config.js` → `bookingUrl`. Use the long link from Google Calendar → Appointment schedule → Share → Website embed → Inline (the URL inside the iframe code, starting `https://calendar.google.com/calendar/appointments/schedules/`). With `embedCalendar: true` the Contact page shows the live calendar.
 
 ### Text on a page
-Find the page block in `index.html` by its comment, e.g. `<!-- ======================= ABOUT ======================= -->`. Edit text in place and keep the existing classes.
+Each page is its own file: `index.html`, `about.html`, `services.html`, `work.html`, `gtm-lab.html`, `contact.html`, `blog/`. Edit text in place and keep the existing classes. The nav, footer and popup are repeated in every file: change them everywhere.
+
+### New blog post
+Copy an existing `blog/<slug>.html`, change the `<title>`, description, canonical, og tags, JSON-LD (headline, description, dates, url), the `<h1>` and the article body. Add a card for it in `blog/index.html` and on the home page, and add its URL to `sitemap.xml`.
 
 ### Services (Services page)
 Cards are `<article class="svc">` inside `<div class="services">`.
